@@ -1,4 +1,9 @@
-.root {
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#root {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -6,11 +11,54 @@
   flex-direction: column;
   gap: 5px;
 }
-.btn {
+#btn,
+#copy-btn {
   background: #000;
   color: white;
   padding: 6px 10px;
 }
-.input {
+#input {
   padding: 5px 20px;
+}
+.header {
+  display: flex;
+}
+
+.toast-message {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background-color: rgb(54, 131, 9);
+  color: white;
+  border: 1px solid rgb(54, 131, 9);
+  border-radius: 0.25rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+.toast-message-slide-in {
+  animation: toast-animation-in 0.5s ease-in;
+}
+.toast-message-slide-out {
+  animation: toast-animation-out 0.5s ease-in;
+}
+@keyframes toast-animation-in {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-animation-out {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(200px);
+    opacity: 0;
+  }
 }
