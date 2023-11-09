@@ -15,7 +15,7 @@ function main() {
   btn.addEventListener("click", function () {
     const bgColor = generateHexColor();
     root.style.backgroundColor = bgColor;
-    input.value = bgColor;
+    input.value = bgColor.substring(1);
   });
 
   copyBtn.addEventListener("click", function () {
@@ -24,8 +24,8 @@ function main() {
       div = null;
     }
     if (isHexValid(input.value)) {
-      navigator.clipboard.writeText(input.value);
-      generateToastMessage(`${input.value} copied`);
+      navigator.clipboard.writeText(`#${input.value}`);
+      generateToastMessage(`#${input.value} copied`);
     } else {
       alert("Color code is not valid hexColor");
     }
@@ -34,7 +34,7 @@ function main() {
   input.addEventListener("keyup", function (e) {
     const color = e.target.value;
     if (color && isHexValid(color)) {
-      root.style.backgroundColor = color;
+      root.style.backgroundColor = `#${color}`;
       input.value = color;
     }
   });
@@ -67,10 +67,8 @@ function generateToastMessage(msg) {
 }
 
 function isHexValid(color) {
-  if (color.length !== 7) return false;
-  if (color[0] !== "#") return false;
+  if (color.length !== 6) return false;
 
-  color = color.substring(1);
   return /^[0-9A-Fa-f]{6}$/i.test(color);
 }
 

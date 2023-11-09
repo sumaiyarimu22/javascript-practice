@@ -12,16 +12,37 @@
   gap: 5px;
 }
 #btn,
-#copy-btn {
+#copy-btn,
+#copy-btn2 {
   background: #000;
   color: white;
   padding: 6px 10px;
 }
-#input {
-  padding: 5px 20px;
+#input,
+#input2 {
+  padding: 0.5rem;
+  margin-left: 1rem;
+  border: none;
+  background-color: #ece9e9;
+}
+#input:focus,
+#input2:focus {
+  outline: none;
+}
+.input-icon,
+.input-icon2 {
+  position: absolute;
+  padding: 0.5rem;
+  background-color: #ddd;
+  color: #424242;
+  top: 0;
+  bottom: 0;
 }
 .header {
   display: flex;
+  align-items: center;
+  position: relative;
+  gap: 0.5rem;
 }
 
 .toast-message {
