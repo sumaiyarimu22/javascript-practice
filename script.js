@@ -40,6 +40,17 @@ function main() {
   });
 }
 
+//function 1- generate three random decinal number for red,green and blue
+//return as an object
+
+function generateColorDecimal() {
+  const red = Math.floor(Math.random() * 255);
+  const green = Math.floor(Math.random() * 255);
+  const blue = Math.floor(Math.random() * 255);
+
+  return { red, green, blue };
+}
+
 function generateHexColor() {
   const red = Math.floor(Math.random() * 255);
   const green = Math.floor(Math.random() * 255);
